@@ -16,7 +16,7 @@ proxy-groups:
 - name: 'PROXY'
   type: 'select'
   proxies:
-  {{ proxies | map(attribute='inbound_tag') | list | unique | yaml | indent(2) }}
+  {{ proxy_remarks | yaml | indent(2) }}
 
 rule-providers:
   my_direct:
