@@ -26,7 +26,7 @@ rule-providers:
   my_direct:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/OneUno1/mihomo-rules/main/my-direct-rules.yaml"
+    url: https://raw.githubusercontent.com/OneUno1/mihomo-rules/main/my-direct-rules.yaml
     path: ./ruleset/my_direct.yaml
     interval: 86400
 
