@@ -17,7 +17,7 @@ proxy-groups:
   type: 'select'
   proxies:
   {% for proxy in proxies -%}
-  - '{{ proxy.inbound_tag }}'
+  - '{{ proxy.inbound_tag | replace("🚀 ", "") | replace("🚀", "") }}'
   {% endfor -%}
 
 rule-providers:
