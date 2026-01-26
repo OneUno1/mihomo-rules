@@ -1,5 +1,4 @@
 allow-lan: true
-tcp-concurrent: true
 mode: rule
 log-level: info
 ipv6: false
@@ -7,7 +6,6 @@ ipv6: false
 dns:
   enable: true
   enhanced-mode: fake-ip
-  listen: 127.0.0.1:6868
   nameserver:
     - 1.1.1.1
     - 8.8.8.8
@@ -17,14 +15,6 @@ dns:
 proxy-groups:
 - name: 'PROXY'
   type: 'select'
-  proxies:
-  - '⚡ Fastest'
-  {{ proxy_remarks | yaml | indent(2) }}
-
-- name: '⚡ Fastest'
-  type: 'url-test'
-  url: 'https://www.gstatic.com/generate_204'
-  interval: 300
   proxies:
   {{ proxy_remarks | yaml | indent(2) }}
 
