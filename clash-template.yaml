@@ -16,16 +16,7 @@ proxy-groups:
 - name: 'PROXY'
   type: 'select'
   proxies:
-  {% for proxy in proxies -%}
-  - '{{ proxy.inbound_tag }}'
-  {% endfor -%}
-
-- name: 'GLOBAL'
-  type: 'select'
-  proxies:
-  {% for proxy in proxies -%}
-  - '{{ proxy.inbound_tag }}'
-  {% endfor -%}
+  {{ proxies | map(attribute='inbound_tag') | list | unique | yaml | indent(2) }}
 
 rule-providers:
   my_direct:
