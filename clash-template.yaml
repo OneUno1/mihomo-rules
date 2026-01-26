@@ -16,7 +16,9 @@ proxy-groups:
 - name: 'PROXY'
   type: 'select'
   proxies:
-  {{ proxy_remarks | yaml | indent(2) }}
+  {% for proxy in proxies -%}
+  - '{{ proxy.inbound_tag }}'
+  {% endfor -%}
 
 rule-providers:
   my_direct:
